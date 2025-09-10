@@ -1,4 +1,5 @@
 import { Monaco } from "@monaco-editor/react";
+import { editor } from "monaco-editor";
 import { Theme } from "../../../types";
 
 type LanguageConfig = Record<
@@ -344,7 +345,14 @@ export const THEMES: Theme[] = [
   { id: "solarized-dark", label: "Solarized Dark", color: "#002b36" },
 ];
 
-export const THEME_DEFINITONS = {
+interface ThemeDefinition {
+  base: editor.BuiltinTheme;
+  inherit: boolean;
+  rules: { token: string; foreground: string }[];
+  colors: Record<string, string>;
+}
+
+export const THEME_DEFINITONS: Record<string, ThemeDefinition> = {
   "github-dark": {
     base: "vs-dark",
     inherit: true,

@@ -67,6 +67,6 @@ function RunButton() {
 }
 export default RunButton;
 
-function saveExecution(arg0: { language: string; code: string; output: string | undefined; error: string | undefined; }) {
-  throw new Error("Function not implemented.");
-}
+// function saveExecution(arg0: { language: string; code: string; output: string | undefined; error: string | undefined; }) {
+//   throw new Error("Function not implemented.");
+// }
